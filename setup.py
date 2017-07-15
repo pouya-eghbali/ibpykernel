@@ -85,6 +85,7 @@ install_requires = setuptools_args['install_requires'] = [
     'traitlets>=4.1.0',
     'jupyter_client',
     'tornado>=4.0',
+    'brackets'
 ]
 
 if any(a.startswith(('bdist', 'build', 'install')) for a in sys.argv):
