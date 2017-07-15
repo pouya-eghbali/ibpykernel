@@ -206,6 +206,7 @@ class IPythonKernel(KernelBase):
         self._forward_input(allow_stdin)
 
         reply_content = {}
+
         try:
             code = brackets.translate(code)
             res = shell.run_cell(code, store_history=store_history, silent=silent)
@@ -360,8 +361,15 @@ class IPythonKernel(KernelBase):
     def do_is_complete(self, code):
         status, indent_spaces = self.shell.input_transformer_manager.check_complete(code)
         r = {'status': status}
+
         if status == 'incomplete':
             r['indent'] = ' ' * indent_spaces
+
+        try:
+            code = brackets.translate(code)
+        except:
+            r = {'status': 'incomplete', 'indent': '    '}
+
         return r
 
     def do_apply(self, content, bufs, msg_id, reply_metadata):
