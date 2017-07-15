@@ -59,6 +59,7 @@ setup_args = dict(
     py_modules      = ['ibpykernel_launcher'],
     package_data    = package_data,
     description     = "Python Brackets Kernel for Jupyter",
+    long_description=open('README.txt').read(),
     author          = 'Pouya Eghbali',
     url             = 'http://python-brackets.org',
     license         = 'BSD',
