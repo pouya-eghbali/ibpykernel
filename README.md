@@ -22,4 +22,4 @@ to launch qtconsole:
 jupyter qtconsole --kernel brackets
 ```
 
-[Read more]('http://python-brackets.org') about Python brackets
+[Read more](http://python-brackets.org) about Python brackets
